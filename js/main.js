@@ -1,8 +1,13 @@
 document.querySelector('button').addEventListener('click',fetchChar)
-const selectArray = document.querySelectorAll('.inside')
+
+document.querySelector('.inside').addEventListener('click',pickPokemon)
+let audio = document.querySelector('audio')
 
 
 function fetchChar() {
+    document.querySelector('img').classList.add('contrast1')
+    document.querySelector('h2').style.display = 'none'
+    
     const generation = document.querySelector('select').value
     let input
     if (generation === 'gen1') {
@@ -24,7 +29,7 @@ function fetchChar() {
     } else if (generation === 'gen9') {
         input =  Math.floor(Math.random()* (1024 - 904) + 904)
     }
-    console.log(input)
+    
 
     fetch(`https://pokeapi.co/api/v2/pokemon-species/${input}`)
         .then((response) => response.json())
@@ -47,39 +52,23 @@ function fetchPic(pokeName) {
         .then(data => {
             console.log(data)
 
-            // for(let i=0;i<4;i++) {
-            //     let index = Math.floor(Math.random()*data.moves.length)
-            //     pokeArray.push(data.moves[index])
-            // }
             
-            document.querySelector('.one').style.backgroundImage = `url("${data.sprites.front_default}#filter1")`
-            document.querySelector('.one').style.backgroundRepeat = 'no-repeat'
+            document.querySelector('img').src = data.sprites.front_default
+            document.querySelector('img').classList.add('contrast1')
             
-            // let audio = document.querySelector('audio')
-            // audio.src = data.cries.legacy
-            // audio.play()
+            
+            audio.src = data.cries.legacy
             console.log(data.name)
             document.querySelector('h2').innerText = data.name
-            // console.log(pokeArray)
         })
         .catch((error) => console.error(error));
 }
 
-function pickPokemon(data,pokeArray) {
-    console.log('something happened')
-    // document.querySelector('.four').style.display = 'flex'
-    document.querySelector('.three').style.backgroundImage = `url(${data.sprites.back_default})`
+function pickPokemon() {
+    if (document.querySelector('img').src === '') {
+        return
+    }
+    document.querySelector('img').classList.remove('contrast1')
+    document.querySelector('h2').style.display = 'inline'
+    audio.play()
 }
-
-// for(let i=0;i<4;i++) {
-            // let index = Math.floor(Math.random()*result.moves.length)
-            // pokeArray.push(result.moves[index])
-            // }
-            // document.querySelector('img').src = result.sprites.front_default
-            // let audio = document.querySelector('audio')
-            // audio.src = result.cries.legacy
-            // audio.play()
-            // let speciesURL = result.species.url
-            // document.querySelector('h2').innerText = result.name
-            // fetchDesc(speciesURL)
-

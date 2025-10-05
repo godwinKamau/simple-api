@@ -2,9 +2,17 @@ body {
     display:flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
-    background:navy;
-    font-family:Georgia, 'Times New Roman', Times, serif ;
+    justify-content: space-evenly;
+    background: linear-gradient(
+    to bottom left,
+        red,
+        orange 50%,
+        red 75%,
+        orangered 75%,
+        red 100%
+        );
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    height:100vh;
     
 }
 
@@ -15,7 +23,7 @@ select {
 }
 
 .big-container {
-    background:rgb(215, 194, 0);
+    background:radial-gradient(white, blue);
     padding:15px;
     border:5px #ff4a02 solid;
     border-radius:30px;
@@ -61,7 +69,7 @@ button {
     
     display:flex;
     justify-content: space-between;
-    z-index: 0;
+    z-index: -2;
 }
 
 .line {
@@ -79,7 +87,7 @@ button {
     width:100%;
     top:-50%;
     left:0;
-    background:linear-gradient(to bottom,rgba(255,255,255,0) 0%, #ff4a02 75%, #ffffff 100%);
+    background:linear-gradient(to bottom,rgba(255,255,255,0) 0%, blue 75%, #ffffff 100%);
     animation: drop 1.5s 0s infinite;
     animation-fill-mode:forwards;
     /* animation-timing-function: cubic-bezier(0.4,0.26,0,0.97); */
@@ -194,7 +202,31 @@ button {
 }
 
 h2 {
-    background: rgba(255,255,255,.5);
+    
     text-transform: capitalize;
+    display:none;
     z-index: 1;
+    font-family:'Pokemon Solid','Times New Roman', Times, serif;
+    color:rgb(223, 223, 3);
+    text-shadow: 4px 4px 4px blue;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-family:'Pokemon Solid','Times New Roman', Times, serif;
+    color:rgb(223, 223, 3);
+    text-shadow: 4px 4px 4px blue;
+    letter-spacing: 3px;
+    font-size:3rem;
+}
+
+img {
+    position:absolute;
+    width:400px;
+    height:400px;
+    z-index: -1;
+}
+
+.contrast1 {
+    filter:contrast(0%);
 }
