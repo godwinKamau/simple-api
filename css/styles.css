@@ -230,3 +230,7 @@ img {
 .contrast1 {
     filter:contrast(0%);
 }
+
+path {
+    fill:transparent
+}
