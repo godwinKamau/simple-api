@@ -1,22 +1,25 @@
-# 📊 Project: Simple API 1
+# Who's That Pokemon? (Simple API)
 
-### Goal: Display data returned from an api
+_Built a "Who's that Pokemon?" simulation. Learning about API calls by using the Pokemon API database_
 
-### How to submit your code for review:
+<hr>
 
-- Fork and clone this repo
-- Create a new branch called answer
-- Checkout answer branch
-- Push to your fork
-- Issue a pull request
-- Your pull request description should contain the following:
-  - (1 to 5 no 3) I completed the challenge
-  - (1 to 5 no 3) I feel good about my code
-  - Anything specific on which you want feedback!
+<img src="./Screenshot 2025-11-10 at 6.53.17 PM.png">
 
-Example:
-```
-I completed the challenge: 5
-I feel good about my code: 4
-I'm not sure if my constructors are setup cleanly...
-```
+<hr>
+
+[Here is the rendered project](godwinkamau.github.io/simple-api/)
+
+<hr>
+
+## Tech Used
+
+HTML, CSS, JavaScript, Pokemon API
+
+<hr>
+
+## Lessons Learned
+
+- Using fetch requests to get data from an API.
+- A few neat CSS techniques to make the page interactive.
+- Manipulating larger objects to siphon out relevant data.
